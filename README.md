@@ -142,7 +142,7 @@ The trained model is saved as: results/svd_model.pkl
 ## Running the Project
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/azraj/book-recommendation-system.git
+git clone https://github.com/azrairemd/book-recommendation-system.git
 cd book-recommendation-system
 ```
 ### 2. Create Environment for Preprocessing and ML Models
@@ -214,4 +214,5 @@ Then open your browser and go to: http://127.0.0.1:5000
 
 ## Project Presentation
 📄 [Final Presentation (PDF)](presentation.pdf)
+
 
