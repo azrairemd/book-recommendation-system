@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Recommendation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Book Recommendation System</h1>
+    <p class="subtitle">Personalized recommendations using SVD</p>
+
+    <div class="user-box">
+        Random User ID: {{ user_id }}
+    </div>
+
+    <table>
+        <tr>
+            <th>Book Title</th>
+            <th>Predicted Rating</th>
+        </tr>
+
+        {% for book in books %}
+        <tr>
+            <td>{{ book.title }}</td>
+            <td class="rating">{{ "%.2f"|format(book.predicted_rating) }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="button-box">
+        <form action="/recommend">
+            <button type="submit">Recommend Another User</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>
