@@ -1,9 +1,13 @@
 import pandas as pd
+from pathlib import Path
 import re
+
 # setting and constants
-INPUT_BOOKS = "data/raw/books_metadata_large.csv"
-INPUT_INTERACTIONS = "data/raw/interactions_large.csv"
-OUTPUT_FILE = "data/processed/cleaned.csv"
+BASE_DIR = Path(__file__).resolve().parents[2]
+
+INPUT_BOOKS = BASE_DIR / "dataset" / "raw" / "books_metadata_large.csv.gz"
+INPUT_INTERACTIONS = BASE_DIR / "dataset" / "raw" / "interactions_large.csv.gz"
+OUTPUT_FILE = BASE_DIR / "dataset" / "processed" / "cleaned.csv"
 
 # columns to keep
 COLS_BOOK = ["book_id", "title", "average_rating", "ratings_count","publication_year", "num_pages"]
