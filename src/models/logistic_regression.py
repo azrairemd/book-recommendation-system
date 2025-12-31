@@ -9,7 +9,7 @@ from sklearn.metrics import (accuracy_score, classification_report,precision_sco
 from sklearn.metrics import roc_auc_score
 
 # Read the dataset (relative path)
-dataset = pd.read_csv("data/processed/cleaned.csv")
+dataset = pd.read_csv("dataset/processed/cleaned.csv")
 
 # Binary classification: books with rating > 3 are considered popular
 popularityBound = 3
@@ -66,4 +66,5 @@ plt.show()
 RocCurveDisplay.from_estimator(model, D_test, y_test)
 plt.title("Logistic Regression ROC Curve")
 plt.show()
+
 
