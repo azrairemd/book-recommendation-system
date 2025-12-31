@@ -9,7 +9,7 @@ from imblearn.over_sampling import SMOTE
 from sklearn.metrics import (accuracy_score,precision_score,recall_score,f1_score, roc_auc_score,classification_report,RocCurveDisplay)
 
 # Read the dataset (relative path)
-dataset = pd.read_csv("data/processed/cleaned.csv")
+dataset = pd.read_csv("dataset/processed/cleaned.csv")
 
 # Define a rule for classification
 popularityBound = 3
@@ -81,4 +81,5 @@ print(classification_report(y_test, y_pred))
 RocCurveDisplay.from_estimator(bagging, D_test_scaled, y_test)
 plt.title("Optimized Bagging + MLP ROC Curve")
 plt.show()
+
 
