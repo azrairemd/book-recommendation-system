@@ -14,7 +14,7 @@ from surprise import Dataset, Reader, SVD
 from surprise.model_selection import train_test_split
 
 # Read dataset
-df = pd.read_csv("data/processed/cleaned.csv")
+df = pd.read_csv("dataset/processed/cleaned.csv")
 
 # Create Surprise dataset
 reader = Reader(rating_scale=(1, 5))
@@ -50,3 +50,4 @@ with open("results/svd_model.pkl", "wb") as f:
     pickle.dump(model, f)
 
 print("SVD model saved to results/svd_model.pkl")
+
