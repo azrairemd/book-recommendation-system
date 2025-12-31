@@ -7,7 +7,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import (accuracy_score,precision_score,recall_score,f1_score,roc_auc_score,classification_report,RocCurveDisplay)
 
 # Read the dataset (relative path)
-dataset = pd.read_csv("data/processed/cleaned.csv")
+dataset = pd.read_csv("dataset/processed/cleaned.csv")
 
 # Create binary popularity label
 dataset['label'] = (dataset['rating'] > 3).astype(int)
@@ -64,4 +64,5 @@ print(classification_report(y_test, y_pred))
 RocCurveDisplay.from_estimator(adaboost_model, D_test_scaled, y_test)
 plt.title("AdaBoost ROC Curve")
 plt.show()
+
 
