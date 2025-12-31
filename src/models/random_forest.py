@@ -6,7 +6,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import (accuracy_score,precision_score,recall_score,f1_score,roc_auc_score,classification_report,RocCurveDisplay)
 
 # Load dataset
-dataset = pd.read_csv("data/processed/cleaned.csv")
+dataset = pd.read_csv("dataset/processed/cleaned.csv")
 
 # Binary classification: books with rating > 3 are considered popular
 popularityBound = 3
@@ -71,4 +71,5 @@ plt.show()
 RocCurveDisplay.from_estimator(model, X_test, y_test)
 plt.title("Random Forest ROC Curve")
 plt.show()
+
 
