@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import roc_curve, auc
 
 # Read the dataset (relative path)
-df = pd.read_csv("data/processed/cleaned.csv")
+df = pd.read_csv("dataset/processed/cleaned.csv")
 
 # Define binary popularity for ROC curve (rating > 3 as popular)
 df['label'] = (df['rating'] > 3).astype(int)
@@ -52,3 +52,4 @@ plt.ylabel('True Positive Rate')
 plt.title('ROC Curve for SVD Recommendation Model')
 plt.legend(loc="lower right")
 plt.show()
+
