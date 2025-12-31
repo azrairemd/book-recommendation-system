@@ -23,12 +23,6 @@ https://www.kaggle.com/datasets/arashnic/goodreads-interactions-dataset
 The dataset contains user–book interactions including explicit ratings.
 All datasets are cleaned and preprocessed before modeling.
 
-> Note: Due to GitHub file size limitations, the raw and processed dataset files
-> are not included in this repository.  
-> The dataset can be downloaded from the provided Kaggle link, and all preprocessing
-> steps can be reproduced using the scripts in the `src/preprocessing/` directory.
-
-
 ---
 
 ## Project Structure
@@ -37,7 +31,7 @@ book-recommendation-system/
 │
 ├── app/ # Flask web application
 ├── assets/ # Saved plots
-├── data/
+├── dataset/
 │ ├── raw/ # Raw Kaggle datasets
 │ └── processed/ # Cleaned and processed datasets
 ├── results/ # Trained models (.pkl files)
@@ -174,7 +168,7 @@ Clean and prepare the dataset.
 ```bash
 python src/preprocessing/preprocess.py
 ```
-Output file: data/processed/cleaned.csv
+Output file: dataset/processed/cleaned.csv
 
 ### 4. Train and Evaluate Classification Models
 Run each model separately to generate evaluation metrics and plots.
@@ -214,5 +208,6 @@ Then open your browser and go to: http://127.0.0.1:5000
 
 ## Project Presentation
 📄 [Final Presentation (PDF)](presentation.pdf)
+
 
 
