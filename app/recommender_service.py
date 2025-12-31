@@ -8,7 +8,7 @@ from src.recommender.svd_recommender import SVDRecommender
 
 # paths
 MODEL_PATH = "results/svd_model.pkl"
-DATA_PATH = "data/processed/cleaned.csv"
+DATA_PATH = "dataset/processed/cleaned.csv"
 
 # recommender instance
 recommender = SVDRecommender(MODEL_PATH, DATA_PATH)

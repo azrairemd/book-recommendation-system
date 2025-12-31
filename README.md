@@ -23,6 +23,18 @@ https://www.kaggle.com/datasets/arashnic/goodreads-interactions-dataset
 The dataset contains user–book interactions including explicit ratings.
 All datasets are cleaned and preprocessed before modeling.
 
+### Git LFS Requirement
+
+This repository uses **Git Large File Storage (Git LFS)** to manage large dataset files.
+
+Before cloning the repository, please install Git LFS:
+https://git-lfs.com/
+
+After installation, run:
+```bash
+git lfs install
+git clone https://github.com/azrairemd/book-recommendation-system.git
+```
 ---
 
 ## Project Structure
@@ -42,8 +54,7 @@ book-recommendation-system/
 ├── venv/ # Virtual environment (general ML models)
 ├── venv_svd/ # Virtual environment (Surprise + NumPy < 2)
 ├── README.md
-├── requirements.txt
-└── requirements_svd.txt
+└── requirements.txt
 
 
 ---
@@ -153,16 +164,6 @@ pip install -r requirements.txt
 ```
 
 ### 3. Data Preprocessing
-⚠️ The dataset files are not included in this repository due to GitHub size limitations.
-
-Before running preprocessing, download the **Goodreads Interactions Dataset** from Kaggle
-and place the raw files under the `data/raw/` directory following the structure described
-in the project.
-
-Then, clean and prepare the dataset by running:
-```bash
-python src/preprocessing/preprocess.py
-```
 
 Clean and prepare the dataset.
 ```bash
@@ -170,7 +171,7 @@ python src/preprocessing/preprocess.py
 ```
 Output file: dataset/processed/cleaned.csv
 
-### 4. Train and Evaluate Classification Models
+### 4. Train and Evaluate Classification Models (This part can be skipped.)
 Run each model separately to generate evaluation metrics and plots.
 ```bash
 python src/models/logistic_regression.py
@@ -180,22 +181,13 @@ python src/models/mlp.py
 python src/models/ensemble.py
 ```
 
-### 5. Create Environment for Recommendation System (SVD)
-(The Surprise library requires NumPy < 2, so a separate environment is needed.)
-```bash
-python -m venv venv_svd
-venv_svd\Scripts\activate
-
-pip install -r requirements_svd.txt
-```
-
-### 6. Train the SVD Recommendation Model
+### 5. Train the SVD Recommendation Model
 ```bash
 python src/models/train_svd.py
 ```
 Output: results/svd_model.pkl
 
-### 7. Run the Web Application
+### 6. Run the Web Application
 ```bash
 python app/app.py
 ```
